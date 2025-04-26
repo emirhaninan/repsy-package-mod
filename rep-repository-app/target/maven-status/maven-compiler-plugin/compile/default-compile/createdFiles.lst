@@ -1,0 +1,7 @@
+com\repsy\repositoryapp\RepsyRepositoryAppApplication.class
+com\repsy\repositoryapp\controller\PackageController.class
+com\repsy\repositoryapp\config\StorageConfig.class
+com\repsy\repositoryapp\controller\HelloController.class
+com\repsy\repositoryapp\repository\PackageRepository.class
+com\repsy\repositoryapp\entity\PackageEntity.class
+com\repsy\repositoryapp\service\PackageService.class
