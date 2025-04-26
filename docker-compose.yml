@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_DB: repsydb
+      POSTGRES_USER: repsy
+      POSTGRES_PASSWORD: repsy123
+    ports:
+      - "5432:5432"
+
+  repository-app:
+    build: ./rep-repository-app
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/repsydb
+      SPRING_DATASOURCE_USERNAME: repsy
+      SPRING_DATASOURCE_PASSWORD: repsy123
+      storage.strategy: file-system
+      storage.upload-path: /tmp/uploads
+    ports:
+      - "8080:8080"
