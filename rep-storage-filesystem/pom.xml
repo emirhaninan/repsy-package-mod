@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.repsy.storage</groupId> 
+    <artifactId>rep-storage-filesystem</artifactId> 
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>rep-storage-filesystem</name>
+    <description>Storage strategy for file system</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <!-- Add dependency for common storage interface -->
+        <dependency>
+            <groupId>com.repsy.storage</groupId>
+            <artifactId>rep-storage-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
+        <!-- Or if you have a shared module that contains the StorageService interface -->
+        <!-- Alternatively, you need to create the StorageService interface in this module -->
+    </dependencies>
+    
+    <distributionManagement>
+        <repository>
+            <id>repsy</id>
+            <url>https://repo.repsy.io/mvn/neraty/repsy-package-mod</url>
+        </repository>
+    </distributionManagement>
+
+</project>
