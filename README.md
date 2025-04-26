@@ -1,6 +1,6 @@
 
+# Repsy Package API![image](https://github.com/user-attachments/assets/e05ca88b-2c25-4297-9d4d-c9edbe515422)
 
-# Repsy Package Mod
 
 A complete modular Spring Boot application designed for package storage and retrieval using PostgreSQL and backends like Filesystem, MinIO.
 
@@ -43,8 +43,32 @@ A complete modular Spring Boot application designed for package storage and retr
 - Clean API for uploading and downloading packages.
 
 ---
+## 🌐 API Endpoints
 
-## 🐳 Run with Docker Compose
+| Method | Endpoint                               | Description                     |
+|:------:|----------------------------------------|---------------------------------|
+| POST   | `/{packageName}/{version}`             | Upload a new package and metadata. |
+| GET    | `/download/{packageName}/{version}/{filename}` | Download a specific file from a package. |
+
+---
+
+## Running the Application
+
+### Local Run
+
+```bash
+# Compile all modules
+mvn clean install
+
+# Package Spring Boot app
+cd rep-repository-app
+mvn package
+
+# Run the app
+java -jar target/rep-repository-app-1.0.0.jar
+```
+
+### 🐳 Run with Docker Compose
 
 ```bash
 docker-compose up --build
